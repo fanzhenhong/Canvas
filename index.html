@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,
+			minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<script src="js/underscore-min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/Game.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/Background.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/Car.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/Mycar.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			*{margin: 0px;padding: 0px;}
+			body{
+				background:url(img/302770.jpg)no-repeat;
+				border-image-width: 100%;
+			}
+			canvas{
+				border: 20px solid green;
+				margin-left: 640px;
+			}
+			.left{
+				position: fixed;
+				width: 500px;
+				height: 150px;
+				background: linear-gradient(to top right, gray,yellow,blue,green);
+				top: 150px;
+				left: 80px;
+				border-radius: 30px;
+				opacity: 0.7;
+			}
+			.right{
+				position: fixed;
+				width: 500px;
+				height: 150px;
+				background: linear-gradient(to bottom left, gray,yellow,blue,green);
+				top: 150px;
+				right: 80px;
+				border-radius: 30px;
+				opacity: 0.7;
+			}
+			
+			div.left,div.right p{
+				color: red;
+				font-weight: bold;
+				font-size: 80px;
+				line-height: 150px;
+				text-align: center;
+			}
+			div.control{
+				position: fixed;
+				width: 450px;
+				height: 300px;
+				background: orange;
+				left: 100px;
+				top: 320px;
+				border-radius: 20px;
+			}
+			div.control div{
+				width: 100px;
+				height: 100px;
+				position: absolute;
+				background: black;
+				top:  30px;
+				left: 30px;
+				border-radius:20px ;
+			}
+			div.control div.kongge{
+				width: 380px;
+				top: 160px;
+			}
+			div.control div.kongge p{
+				color: white;
+				font-size: 40px;
+				line-height: 90px;
+				text-align: center;
+			}
+			div.control div.A p{
+				color: white;
+				font-size: 40px;
+				line-height: 50px;
+				text-align: center;
+			} 
+			div.control div.R {
+				width: 230px;
+				left: 180px;
+			}
+			div.control div.R p{
+				color: white;
+				font-size: 40px;
+				line-height: 50px;
+				text-align: center;	
+			}
+			div.function{
+				position: fixed;
+				width: 450px;
+				height: 300px;
+				background: whitesmoke;
+				right: 100px;
+				top: 320px;
+				background: url(img/timg.jpg)no-repeat;
+				background-size: 450px 300px;
+			}
+			div.function div{
+				top:30px;
+				left: 30px;
+				color: white;
+				position: absolute;
+				width: 100px;
+				height: 100px;
+				border-radius:20px ;
+				background: black;
+				font-size: 70px;
+				line-height: 100px;
+				text-align: center;
+			}
+			div.function div.dong{
+				left: 320px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="control">
+			<div class="kongge"><p>点击空格开启警笛</p></div>
+			<div class="A"><p>A</p><p>音效</p></div>
+			<div class="R"><p>Ctrl+R</p><p>重新开始</p></div>
+		</div>
+		<div class="function ">
+			<div class="yi"><p>移</p></div>
+			<div class="dong"><p>动</p></div>
+		</div>
+		<div class="left">
+			<p>开车不喝酒</p>
+		</div>
+		<div class="right">
+			<p>喝酒不开车</p>
+		</div>
+		<audio id="guangbo" src="mp3/警察广播.mp3"></audio>
+		<audio id="jingdi" src="mp3/警笛.mp3"></audio>
+		<audio id="wheel" src="mp3/转弯.mp3"></audio>
+		<audio id="background1" src="mp3/引擎特效.mp3"  loop="loop"></audio>
+		<audio id="background2"  src="mp3/fcyx.mp3"  loop="loop"></audio>
+		<audio id="gameover" src="mp3/gameover.mp3"></audio>
+		<canvas id="box" width="" height=""></canvas>
+	</body>
+</html>
+<script type="text/javascript">
+	var game = new Game();
+</script>
